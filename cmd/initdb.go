@@ -27,14 +27,14 @@ func init() {
 }
 
 func CreateDb() {
-      _, base_err:= os.Stat(BasePath)
-      _, db_err := os.Stat(DbPath)
+      _, BaseErr:= os.Stat(BasePath)
+      _, DbErr := os.Stat(DbPath)
 
-      if os.IsNotExist(base_err) && os.IsNotExist(db_err) {
+      if os.IsNotExist(BaseErr) && os.IsNotExist(DbErr) {
          os.Mkdir(BasePath, os.ModePerm)
          os.Create(DbPath)
          fmt.Println("db created")
-      }else if db_err != nil{
+      }else if DbErr != nil{
          os.Create(DbPath)
          fmt.Println("db created")
       }else {
@@ -47,7 +47,7 @@ func SetupDb() {
    db, err := sql.Open("sqlite3", DbPath)
    CheckErr(err)
    defer db.Close()
-   _, err = db.Exec("CREATE TABLE notes (non INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, content LONGBLOB(4294967295),class CHAR(255) DEFAULT '' ,id CHAR(255) DEFAULT '',date CHAR(8));")
+   _, err = db.Exec("CREATE TABLE notes (non INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, content LONGBLOB(4294967295),class CHAR(255) ,id CHAR(255) ,date CHAR(8));")
    CheckErr(err)
 }
    

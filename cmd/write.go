@@ -61,7 +61,7 @@ func GenWriteQuery(content string, class string ,id string, date string) string 
       date = time.Now().Format("2006:01:02")
    }
 
-   query = fmt.Sprintf("insert into notes(content, class, id, date) values('%s', '%s', '%s', '%s');", content, class, id, date)
+   query = fmt.Sprintf("INSERT INTO notes(content, class, id, date) VALUES('%s', '%s', '%s', '%s');", content, class, id, date)
          
    return query 
 }

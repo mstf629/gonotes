@@ -42,21 +42,21 @@ func GenReadQuery(class string ,id string, date string) string {
    var query string
    switch {
    case class != "" && id != "" && date != "":
-      query = fmt.Sprintf("select * from notes where class='%s' and id='%s' and date='%s';",class, id, date)
+      query = fmt.Sprintf("SELECT * FROM notes WHERE class='%s' AND id='%s' AND date='%s';",class, id, date)
    case class != "" && id != "" && date == "":
-      query = fmt.Sprintf("select * from notes where class='%s' and id='%s';", class, id)
+      query = fmt.Sprintf("SELECT * FROM notes WHERE class='%s' AND id='%s';", class, id)
    case class != "" && id == "" && date != "":
-      query = fmt.Sprintf("select * from notes where class='%s' and date='%s';", class, date)
+      query = fmt.Sprintf("SELECT * FROM notes WHERE class='%s' AND date='%s';", class, date)
    case class == "" && id != "" && date != "":
-      query = fmt.Sprintf("select * from notes where  id='%s' and date='%s';", id, date)
+      query = fmt.Sprintf("SELECT * FROM notes WHERE  id='%s' AND date='%s';", id, date)
    case class == "" && id == "" && date == "":
-      query = fmt.Sprintf("select * from notes") 
+      query = fmt.Sprintf("SELECT * FROM notes") 
    case class == "" && id == "" && date != "":
-      query = fmt.Sprintf("select * from notes where date='%s';", date)
+      query = fmt.Sprintf("SELECT * FROM notes WHERE date='%s';", date)
    case class == "" && id != "" && date == "":
-      query = fmt.Sprintf("select * from notes where id='%s';", id,)
+      query = fmt.Sprintf("SELECT * FROM notes WHERE id='%s';", id,)
    case class != "" && id == "" && date == "":
-      query = fmt.Sprintf("select * from notes where class='%s';", class) 
+      query = fmt.Sprintf("SELECT * FROM notes WHERE class='%s';", class) 
       
    }
    return query 

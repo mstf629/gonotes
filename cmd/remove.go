@@ -11,7 +11,6 @@ import (
    "database/sql"
 )
 
-// removeCmd represents the remove command
 var removeCmd = &cobra.Command{
 	 Use:   "remove",
 	 Short: "remove note from database",
@@ -20,6 +19,7 @@ var removeCmd = &cobra.Command{
       non, _ := cmd.Flags().GetString("non")
 
       query := GenRemoveQuery(non)
+
       RemoveNote(query)
        
 	 },

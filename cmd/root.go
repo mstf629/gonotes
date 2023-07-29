@@ -12,10 +12,9 @@ var DbPath = home + "/.cache/gonotes/gonotes.db"
 
 
 func CheckDb() {
-
    _ , err := os.Stat(DbPath)
    if os.IsNotExist(err) {
-      log.Fatalln("please run [gonotes initdb] to create new database")
+      log.Fatalln("please run 'gonotes initdb' to create new database")
    }
 }
 
@@ -28,7 +27,6 @@ func CheckErr(errs ...error) {
 }
 
 
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "gonotes",
 	Short: "its a simple program to manage notes",
