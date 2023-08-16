@@ -17,7 +17,7 @@ in gonotes you have four subcommands:
 4. remove
 
 ### initdb 
-    - before you start write some notes you need to initialization database with:\
+    - before you start write some notes you need to initialization database with:
         **gonotes initdb**
     - you can find the database in ~/.cache/gonotes/ with name gonotes.db
 ### write
@@ -40,8 +40,9 @@ in gonotes you have four subcommands:
     - remove command just has one flag :
         1. -n "set non that you want remove it"
 ## todo
-1. edit command 
+1. add edit command
 2. multi remove for remove command
+3. manage many database 
 
     
 
