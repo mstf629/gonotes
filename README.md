@@ -1,12 +1,12 @@
 # gonotes
-**gonotes** is simple cli program to manage notes or in table with class, date and id 
+**gonotes** is simple cli program to manage notes in table with class, date and id 
 
 ## library used 
 1. cobra
 2. sqlite driver
 
 ## install 
-you dont need to install any dependency\
+you don't need to install any dependency\
 just run **go install**
 
 ## use
